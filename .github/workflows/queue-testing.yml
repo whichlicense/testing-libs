@@ -24,7 +24,7 @@ jobs:
         distribution: [ zulu, graalvm ]
         compilation: [ jit, aot ]
         os: [ ubuntu-22.04, windows-2022, macos-12 ]
-        directory: [ enumpowerset ]
+        directory: [ enumpowerset, nullable ]
         exclude:
           - distribution: zulu
             compilation: aot
