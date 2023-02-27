@@ -29,8 +29,6 @@ repositories {
 dependencies {
     api("org.junit.jupiter:junit-jupiter-api:5.9.2")
     api("org.junit.jupiter:junit-jupiter-params:5.9.2")
-    testImplementation("org.mockito:mockito-subclass:5.1.1")
-    testImplementation("org.mockito:mockito-junit-jupiter:5.1.1")
     testImplementation("org.assertj:assertj-core:3.24.2")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.2")
 }
@@ -52,8 +50,8 @@ graalvmNative {
 
 publishing {
     publications {
-        create<MavenPublication>("enumpowerset") {
-            artifactId = "enumpowerset"
+        create<MavenPublication>("nullable") {
+            artifactId = "nullable"
             from(components["java"])
             versionMapping {
                 usage("java-api") {
@@ -64,9 +62,9 @@ publishing {
                 }
             }
             pom {
-                name.set("WhichLicense testing-libs/enumpowerset")
-                description.set("This library provides an internal JUnit 5 extension for enums.")
-                url.set("https://github.com/whichlicense/testing-libs/enumpowerset")
+                name.set("WhichLicense testing-libs/nullable")
+                description.set("This library provides an internal JUnit 5 extension for nullable params.")
+                url.set("https://github.com/whichlicense/testing-libs/nullable")
                 licenses {
                     license {
                         name.set("The Apache License, Version 2.0")
@@ -105,7 +103,7 @@ signing {
         val signingKey = System.getenv("PKG_SIGNING_KEY")
         val signingPassword = System.getenv("PKG_SIGNING_PW")
         useInMemoryPgpKeys(signingKey, signingPassword)
-        sign(publishing.publications["enumpowerset"])
+        sign(publishing.publications["nullable"])
     }
 }
 

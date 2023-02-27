@@ -4,11 +4,4 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
-rootProject.name = "enumpowerset"
-
-pluginManagement {
-    repositories {
-        mavenCentral()
-        gradlePluginPortal()
-    }
-}
+package com.whichlicense.testing.nullable;
