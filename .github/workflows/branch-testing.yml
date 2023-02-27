@@ -1,0 +1,39 @@
+#
+# Copyright (c) 2023 - for information on the respective copyright owner
+# see the NOTICE file and/or the repository https://github.com/whichlicense/testing-libs.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+name: Test Branch
+
+on:
+  workflow_dispatch:
+
+  pull_request_target:
+    paths:
+      - .github/workflows/branch-testing.yml
+      - ./**.properties
+      - ./**.java
+      - ./**.kts
+
+permissions:
+  contents: read
+  packages: read
+
+jobs:
+  verify:
+    strategy:
+      fail-fast: false
+      matrix:
+        version: [ 19 ]
+        distribution: [ zulu ]
+        compilation: [ jit ]
+        os: [ ubuntu-22.04 ]
+        directory: [ enumpowerset ]
+    uses: whichlicense/.github/.github/workflows/reusable-testing.yml@main
+    with:
+      version: ${{ matrix.version }}
+      distribution: ${{ matrix.distribution }}
+      compilation: ${{ matrix.compilation }}
+      os: ${{ matrix.os }}
+      directory: ${{ matrix.directory }}

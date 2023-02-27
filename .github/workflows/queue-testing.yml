@@ -1,0 +1,37 @@
+#
+# Copyright (c) 2023 - for information on the respective copyright owner
+# see the NOTICE file and/or the repository https://github.com/whichlicense/testing-libs.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+name: Test Queue
+
+on:
+  workflow_dispatch:
+
+  merge_group:
+
+permissions:
+  contents: read
+  packages: read
+
+jobs:
+  verify:
+    strategy:
+      fail-fast: false
+      matrix:
+        version: [ 19 ]
+        distribution: [ zulu, graalvm ]
+        compilation: [ jit, aot ]
+        os: [ ubuntu-22.04, windows-2022, macos-12 ]
+        directory: [ enumpowerset ]
+        exclude:
+          - distribution: zulu
+            compilation: aot
+    uses: whichlicense/.github/.github/workflows/reusable-testing.yml@main
+    with:
+      version: ${{ matrix.version }}
+      distribution: ${{ matrix.distribution }}
+      compilation: ${{ matrix.compilation }}
+      os: ${{ matrix.os }}
+      directory: ${{ matrix.directory }}
