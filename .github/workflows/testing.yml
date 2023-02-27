@@ -1,0 +1,44 @@
+#
+# Copyright (c) 2023 - for information on the respective copyright owner
+# see the NOTICE file and/or the repository https://github.com/whichlicense/testing-libs.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+name: Test Artifacts
+
+on:
+  workflow_dispatch:
+
+  pull_request_target:
+    paths:
+      - .github/workflows/testing.yml
+      - ./**.properties
+      - ./**.java
+      - ./**.kts
+  
+  merge_group:
+
+permissions:
+  contents: read
+  packages: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: '19'
+          cache: 'gradle'
+      - name: Validate Gradle wrapper
+        uses: gradle/wrapper-validation-action@v1
+      - name: Test artifact
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: test
+          build-root-directory: ./enumpowerset
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CI: true
