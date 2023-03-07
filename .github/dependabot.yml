@@ -40,7 +40,5 @@ updates:
     directory: "/naming/"
     schedule:
       interval: "daily"
-    registries:
-      - github-packages
     reviewers:
       - "grevend"
