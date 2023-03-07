@@ -2,14 +2,19 @@ version: 2
 registries:
   github-packages:
     type: maven-repository
-    url: https://maven.pkg.github.com/whichlicense/testing-libs
-    token: ${{ github.token }}
+    url: https://maven.pkg.github.com/whichlicense
+    username: whichlicense
+    password: ${{ secrets.GH_PKG }}
 updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "daily"
+    reviewers:
+      - "grevend"
   - package-ecosystem: "gradle"
     directory: "/enumpowerset/"
     schedule:
       interval: "daily"
+    reviewers:
+      - "grevend"
