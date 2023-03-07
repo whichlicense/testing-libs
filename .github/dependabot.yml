@@ -16,5 +16,31 @@ updates:
     directory: "/enumpowerset/"
     schedule:
       interval: "daily"
+    registries:
+      - github-packages
+    reviewers:
+      - "grevend"
+  - package-ecosystem: "gradle"
+    directory: "/nullable/"
+    schedule:
+      interval: "daily"
+    registries:
+      - github-packages
+    reviewers:
+      - "grevend"
+  - package-ecosystem: "gradle"
+    directory: "/whitespaces/"
+    schedule:
+      interval: "daily"
+    registries:
+      - github-packages
+    reviewers:
+      - "grevend"
+  - package-ecosystem: "gradle"
+    directory: "/naming/"
+    schedule:
+      interval: "daily"
+    registries:
+      - github-packages
     reviewers:
       - "grevend"
