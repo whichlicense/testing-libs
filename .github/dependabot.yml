@@ -2,9 +2,10 @@ version: 2
 registries:
   github-packages:
     type: maven-repository
-    url: https://maven.pkg.github.com/whichlicense
+    url: https://maven.pkg.github.com/whichlicense/testing-libs
     username: ${{ secrets.GH_ACCT }}
     password: ${{ secrets.GH_PKG }}
+    replaces-base: true
 updates:
   - package-ecosystem: "github-actions"
     directory: "/"
