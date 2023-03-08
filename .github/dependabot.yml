@@ -3,7 +3,7 @@ registries:
   github-packages:
     type: maven-repository
     url: https://maven.pkg.github.com/whichlicense
-    username: whichlicense
+    username: ${{ secrets.GH_ACCT }}
     password: ${{ secrets.GH_PKG }}
 updates:
   - package-ecosystem: "github-actions"
