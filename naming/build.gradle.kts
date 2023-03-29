@@ -12,7 +12,7 @@ plugins {
 }
 
 group = "com.whichlicense.testing"
-version = "0.0.0"
+version = "0.0.0-SNAPSHOT"
 
 java {
     toolchain {
@@ -23,6 +23,9 @@ java {
 }
 
 repositories {
+    maven {
+        url = uri("https://s01.oss.sonatype.org/content/repositories/snapshots")
+    }
     mavenCentral()
 }
 
@@ -91,8 +94,18 @@ publishing {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/whichlicense/testing-libs")
             credentials {
-                username = System.getenv("GITHUB_ACTOR")
-                password = System.getenv("GITHUB_TOKEN")
+                username = project.findProperty("gpr.user") as String? ?: System.getenv("GITHUB_ACTOR")
+                password = project.findProperty("gpr.token") as String? ?: System.getenv("GITHUB_TOKEN")
+            }
+        }
+        maven {
+            name = "OSSRH"
+            url = uri(if ((project.version as String).endsWith("SNAPSHOT"))
+                "https://s01.oss.sonatype.org/content/repositories/snapshots/" else
+                "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
+            credentials {
+                username = project.findProperty("ossrh.user") as String? ?: System.getenv("OSSRH_USER")
+                password = project.findProperty("ossrh.pw") as String? ?: System.getenv("OSSRH_PW")
             }
         }
     }
