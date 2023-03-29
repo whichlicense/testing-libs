@@ -27,13 +27,6 @@ repositories {
         url = uri("https://s01.oss.sonatype.org/content/repositories/snapshots")
     }
     mavenCentral()
-    maven {
-        url = uri("https://maven.pkg.github.com/whichlicense/testing-libs")
-        credentials {
-            username = project.findProperty("gpr.user") as String? ?: System.getenv("GITHUB_ACTOR")
-            password = project.findProperty("gpr.key") as String? ?: System.getenv("GITHUB_TOKEN")
-        }
-    }
 }
 
 dependencies {
@@ -42,7 +35,7 @@ dependencies {
     testImplementation("org.mockito:mockito-subclass:5.2.0")
     testImplementation("org.mockito:mockito-junit-jupiter:5.2.0")
     testImplementation("org.assertj:assertj-core:3.24.2")
-    testImplementation("com.whichlicense.testing:naming:0.0.0")
+    testImplementation("com.whichlicense.testing:naming:0.0.0-SNAPSHOT")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.2")
 }
 
