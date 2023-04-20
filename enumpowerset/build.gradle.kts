@@ -12,7 +12,7 @@ plugins {
 }
 
 group = "com.whichlicense.testing"
-version = "0.1.1-SNAPSHOT"
+version = "0.1.3-SNAPSHOT"
 
 java {
     toolchain {
@@ -35,7 +35,7 @@ dependencies {
     testImplementation("org.mockito:mockito-subclass:5.3.0")
     testImplementation("org.mockito:mockito-junit-jupiter:5.3.0")
     testImplementation("org.assertj:assertj-core:3.24.2")
-    testImplementation("com.whichlicense.testing:naming:0.0.0-SNAPSHOT")
+    testImplementation("com.whichlicense.testing:naming:0.1.1-SNAPSHOT")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.2")
 }
 
