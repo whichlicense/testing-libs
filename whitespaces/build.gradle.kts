@@ -12,7 +12,7 @@ plugins {
 }
 
 group = "com.whichlicense.testing"
-version = "0.0.0-SNAPSHOT"
+version = "0.1.1-SNAPSHOT"
 
 java {
     toolchain {
