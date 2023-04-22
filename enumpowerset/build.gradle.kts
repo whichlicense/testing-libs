@@ -32,7 +32,7 @@ repositories {
 dependencies {
     api("org.junit.jupiter:junit-jupiter-api:5.9.2")
     api("org.junit.jupiter:junit-jupiter-params:5.9.2")
-    testImplementation("org.mockito:mockito-subclass:5.3.0")
+    testImplementation("org.mockito:mockito-subclass:5.3.1")
     testImplementation("org.mockito:mockito-junit-jupiter:5.3.1")
     testImplementation("org.assertj:assertj-core:3.24.2")
     testImplementation("com.whichlicense.testing:naming:0.1.3-SNAPSHOT")
