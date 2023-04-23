@@ -20,3 +20,7 @@ updates:
     directory: "/naming/"
     schedule:
       interval: "daily"
+  - package-ecosystem: "gradle"
+    directory: "/fileref/"
+    schedule:
+      interval: "daily"

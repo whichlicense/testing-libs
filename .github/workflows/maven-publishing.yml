@@ -21,7 +21,7 @@ jobs:
   publish:
     strategy:
       matrix:
-        directory: [ enumpowerset, nullable, whitespaces, naming ]
+        directory: [ enumpowerset, nullable, whitespaces, naming, fileref ]
     uses: whichlicense/.github/.github/workflows/maven-publishing.yml@main
     with:
       root-directory: ${{ matrix.directory }}
