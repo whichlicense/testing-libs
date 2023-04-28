@@ -30,7 +30,7 @@ repositories {
 }
 
 dependencies {
-    api("org.junit.jupiter:junit-jupiter-api:5.9.2")
+    api("org.junit.jupiter:junit-jupiter-api:5.9.3")
     api("org.junit.jupiter:junit-jupiter-params:5.9.2")
     testImplementation("org.mockito:mockito-subclass:5.3.1")
     testImplementation("org.mockito:mockito-junit-jupiter:5.3.1")
