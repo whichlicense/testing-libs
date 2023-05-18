@@ -24,3 +24,7 @@ updates:
     directory: "/fileref/"
     schedule:
       interval: "daily"
+  - package-ecosystem: "gradle"
+    directory: "/filecontent/"
+    schedule:
+      interval: "daily"

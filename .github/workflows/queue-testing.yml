@@ -24,7 +24,7 @@ jobs:
         distribution: [ zulu, graalvm ]
         compilation: [ jit, aot ]
         os: [ ubuntu-22.04, windows-2022, macos-12 ]
-        directory: [ enumpowerset, nullable, whitespaces, naming, fileref ]
+        directory: [ enumpowerset, nullable, whitespaces, naming, fileref, filecontent ]
         exclude:
           - distribution: zulu
             compilation: aot
