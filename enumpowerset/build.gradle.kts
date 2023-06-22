@@ -6,7 +6,7 @@
  */
 plugins {
     id("java-library")
-    id("org.graalvm.buildtools.native") version "0.9.22"
+    id("org.graalvm.buildtools.native") version "0.9.23"
     id("maven-publish")
     id("signing")
 }
@@ -32,8 +32,8 @@ repositories {
 dependencies {
     api("org.junit.jupiter:junit-jupiter-api:5.9.3")
     api("org.junit.jupiter:junit-jupiter-params:5.9.3")
-    testImplementation("org.mockito:mockito-subclass:5.3.1")
-    testImplementation("org.mockito:mockito-junit-jupiter:5.3.1")
+    testImplementation("org.mockito:mockito-subclass:5.4.0")
+    testImplementation("org.mockito:mockito-junit-jupiter:5.4.0")
     testImplementation("org.assertj:assertj-core:3.24.2")
     testImplementation("com.whichlicense.testing:naming:0.3.0-SNAPSHOT")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.3")
