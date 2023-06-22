@@ -12,11 +12,11 @@ plugins {
 }
 
 group = "com.whichlicense.testing"
-version = "0.3.0-SNAPSHOT"
+version = "0.7.6-SNAPSHOT"
 
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(19))
+        languageVersion.set(JavaLanguageVersion.of(20))
     }
     withJavadocJar()
     withSourcesJar()
